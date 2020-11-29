@@ -34,6 +34,7 @@ setup(description='Fit images into slides',
       py_modules=['slidefit'],
       keywords='slides presentation image productivity tool pptx',
       long_description=open('README.rst').read(),
+      long_description_content_type='text/x-rst',
       name='slidefit',
       url='https://github.com/tomnor/slidefit',
       version=version(),)
