@@ -53,7 +53,7 @@ Examples
 
   Existing files are not over-written.
 
-  .. image:: resources/example1.png
+  .. image:: https://github.com/tomnor/slidefit/raw/master/resources/example1.png
 
 - *Example2* Three images per slide in a row (7 images, 3 slides)
 
@@ -62,7 +62,7 @@ Examples
 
     slidefit -m 1,3 -o example2.pptx img0[1-7].png
 
-  .. image:: resources/example2.png
+  .. image:: https://github.com/tomnor/slidefit/raw/master/resources/example2.png
 
 - *Example3* Three images per slide in one column on the left side
 
@@ -73,7 +73,7 @@ Examples
 
   The space is given as a percentage of available space.
 
-  .. image:: resources/example3.png
+  .. image:: https://github.com/tomnor/slidefit/raw/master/resources/example3.png
 
 - *Example4* Template with a title slide and 3 more slides with headings
 
@@ -85,7 +85,7 @@ Examples
   The ``--pages`` option (``-p``) is used to specify what pages to put
   images on.
 
-  .. image:: resources/example4.png
+  .. image:: https://github.com/tomnor/slidefit/raw/master/resources/example4.png
 
 - *Example5* Template as above, use different layout on slides
 
@@ -97,7 +97,7 @@ Examples
     slidefit -t tmp.pptx -m 1,3 -y 20,10 -p 3 -o example5.pptx img0[5-7].png
     rm tmp.pptx
 
-  .. image:: resources/example5.png
+  .. image:: https://github.com/tomnor/slidefit/raw/master/resources/example5.png
 
 Other than adding images to slides, **slidefit** is not supposed to do
 anything with the slides. A blank slide layout is chosen when no
