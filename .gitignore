@@ -3,6 +3,6 @@ dist/
 *egg-info
 imageflag
 
-*.png
+/*.png
+/*.pptx
 *.html
-*.pptx
