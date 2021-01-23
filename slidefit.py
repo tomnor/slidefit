@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-# Copyright (C) 2020 Tomas Nordin
+# Copyright (C) 2020-2021 Tomas Nordin
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -69,7 +69,7 @@ import sys
 import pptx
 import docopt
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 # 1 mm is 36000 English Metric Units (EMU)
 # blank_slide_layout = prs.slide_layouts[6]:
