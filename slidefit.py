@@ -94,9 +94,21 @@ def split2ints(rangestring):
                 yield n
 
 
+def numberpair(args, option, floatp=True):
+    # aid to provide useful error message
+    numbers = args[option].split(',')
+    try:
+        if floatp:
+            return [float(numbers[0]), float(numbers[1])]
+        else:
+            return [int(numbers[0]), int(numbers[1])]
+    except (IndexError, ValueError):
+        sys.exit('slidefit: Bad argument for %s "%s"' % (option, args[option]))
+
+
 def main(args):
 
-    matrix = Matrix(*[int(n) for n in args['--matrix'].split(',')])
+    matrix = Matrix(*numberpair(args, '--matrix', floatp=False))
 
     # dummy presentation to inspect resulting size
     prs = pptx.Presentation(args['--template'])
@@ -112,9 +124,11 @@ def main(args):
     orig_size = Size(pic.width, pic.height)  # emu
 
     reserved = Space(*([int(float(perc) / 100 * prs.slide_height)
-                        for perc in args['--vspace'].split(',')]
+                        for perc in numberpair(args, '--vspace',
+                                               floatp=True)]
                        + [int(float(perc) / 100 * prs.slide_width)
-                          for perc in args['--hspace'].split(',')]))
+                          for perc in numberpair(args, '--hspace',
+                                                 floatp=True)]))
 
     height_avail = prs.slide_height - reserved.top - reserved.bottom
     width_avail = prs.slide_width - reserved.left - reserved.right
