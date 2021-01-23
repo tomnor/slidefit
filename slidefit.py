@@ -64,6 +64,7 @@ Arguments:
 import os
 import math
 from collections import namedtuple
+import sys
 
 import pptx
 import docopt
@@ -196,8 +197,7 @@ def main(args):
         prs.save(args['--ppt'])
         print('Saved', args['--ppt'])
     else:
-        print('File exist, not over-writing. (%s)' % args['ppt'])
-        exit(1)
+        sys.exit('slidefit: File exist, not over-writing (%s)' % args['--ppt'])
 
 
 def debug(args):
