@@ -70,7 +70,7 @@ import sys
 import pptx
 import docopt
 
-__version__ = '0.1.1'
+__version__ = '0.2.1'
 
 # 1 mm is 36000 English Metric Units (EMU)
 # blank_slide_layout = prs.slide_layouts[6]:
