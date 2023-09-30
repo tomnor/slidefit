@@ -18,7 +18,7 @@
 """FIT IMAGES INTO SLIDES
 
 Usage:
-    slidefit [-d -m MATRIX -t PPT -o PPT]
+    slidefit [-df -m MATRIX -t PPT -o PPT]
              [ -y SPACE -x SPACE -p PAGES] IMG...
     slidefit (-h | -v)
 
@@ -34,6 +34,7 @@ Options:
     -o, --ppt PPT
                   Name of the output slide file (.pptx).
                   [default: slidefit-output.pptx]
+    -f, --force   Overwrite existing output file.
     -t, --template PPT
                   Name of a possible input slide file.
     -p, --pages PAGES
@@ -207,7 +208,7 @@ def main(args):
     if args['IMG']:
         print('Warning: not all images could be inserted by given command')
 
-    if not os.path.exists(args['--ppt']):
+    if not os.path.exists(args['--ppt']) or args['--force']:
         prs.save(args['--ppt'])
         print('Saved', args['--ppt'])
     else:
