@@ -18,7 +18,7 @@ dist : $(DISTFILES)
 
 # requirements for slidefit is required for the examples
 
-examples : example1 example2 example3 example4 example5
+examples : example1 example2 example3 example4 example5 example6
 images : imageflag
 
 imageflag :
@@ -60,6 +60,12 @@ example5.pptx : slidefit.py imageflag
 	./slidefit.py -t tmp.pptx -m 1,3 -y 20,10 -p 3 -o $@ img0[5-7].png
 	rm tmp.pptx
 
+# same as 5 but not using special tmp.pptx by use of --force
+example6 : example6.pptx
+example6.pptx : slidefit.py imageflag
+	rm -f $@
+	./slidefit.py -t $(TEMPLATE) -m 2,2 -x 65,5 -y 20,10 -p 2,4 -o $@ img0[1-4].png img0[8-9].png img1[0-1].png
+	./slidefit.py -f -t $@ -m 1,3 -y 20,10 -p 3 -o $@ img0[5-7].png
 
 clean :
 	rm -f *.png *.html *.pptx imageflag
