@@ -99,6 +99,17 @@ Examples
 
   .. image:: https://github.com/tomnor/slidefit/raw/master/resources/example5.png
 
+- *Example6* As example5 but using ``--force`` to skip special temp files
+
+  Use the target output file `example6.pptx` as target in all passes
+  and as template file as necessary (once created)::
+
+    slidefit -t resources/pen-slides.pptx -m 2,2 -x 65,5 -y 20,10 -p 2,4 -o example6.pptx img0[1-4].png img0[8-9].png img1[0-1].png
+    slidefit -f -t example6.pptx -m 1,3 -y 20,10 -p 3 -o example6.pptx img0[5-7].png
+
+  Using ``--force`` one can overwrite an existing file.
+
+
 Other than adding images to slides, **slidefit** is not supposed to do
 anything with the slides. A blank slide layout is chosen when no
 template is given.
