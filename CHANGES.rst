@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.2.0 (2023-09-30)
+------------------
+
+- New option ``--force`` to overwrite existing file
+- Require python-pptx >= 0.6.22 (to get bugfix #762)
+
+
 0.1.1 (2021-01-23)
 ------------------
 
