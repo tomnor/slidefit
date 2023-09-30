@@ -30,7 +30,7 @@ setup(description='Fit images into slides',
       entry_points={
           'console_scripts': 'slidefit=slidefit:distmain'
       },
-      install_requires=['python-pptx', 'docopt'],
+      install_requires=['python-pptx>=0.6.22', 'docopt'],
       py_modules=['slidefit'],
       keywords='slides presentation image productivity tool pptx',
       long_description=open('README.rst').read(),
